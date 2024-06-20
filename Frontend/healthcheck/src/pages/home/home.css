@@ -1,0 +1,99 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.home {
+    max-height: fit-content;
+    margin: auto auto;
+    width: 100%;
+    position: relative;
+    background-color: #000000;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 38px;
+    color: #e4dded;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    background: url(../icon/mapBackground.png) no-repeat center center fixed; 
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.radar {
+    overflow: hidden;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px hsl(0, 0%, 0%),inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+    background: repeating-radial-gradient(transparent,transparent 23px,#287a3300 25px,#287a3300 27px),
+                linear-gradient(#ffffff00, #ffffff00);
+    background-size: 100%, 218px 218px, 218px 218px, 100%;
+    backdrop-filter: blur(3px);
+}
+
+.radar-container{
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.sweep {
+  box-sizing: border-box;
+  border-right: solid 1.5px hsla(204, 73%, 50%, 0.568);
+  width: 275px;
+  height: 275px;
+  border-radius: 100% 0 0 0;
+  transform-origin: 100% 100%;
+  background: linear-gradient(47deg,rgba(34, 34, 34, 0) 50%,rgb(51, 121, 153));
+  animation: sweep 5s infinite linear;
+}
+@keyframes sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ping-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(0, 140, 255);
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  animation: ping-dot 5s infinite linear;
+  animation-delay: calc(var(--delay) * 100ms);
+}
+
+@keyframes ping-dot {
+  from {
+    box-shadow: 0 0 4px 4px rgba(0, 204, 255, 0.589);
+  }
+  to {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0), 0 0 0 4px rgba(0, 255, 0, 0),
+      0 0 0 6px rgba(0, 0, 0, 0), 0 0 0 8px rgba(0, 255, 0, 0),
+      0 0 4px 10px rgba(0, 255, 0, 0);
+  }
+}
+
+#dot1 {
+  top: 40%;
+  left: 30%;
+  --delay: 7;
+}
+
+#dot2 {
+  top: 60%;
+  left: 50%;
+  --delay: 9;
+}
+
+#dot3 {
+  top: 80%;
+  left: 70%;
+  --delay: 11;
+}

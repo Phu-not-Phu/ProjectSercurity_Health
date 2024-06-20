@@ -21,13 +21,6 @@
     align-items: center;
     justify-content: center;
   }
-  
-.mapBackground {
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .demo-login-child {
   position: absolute;

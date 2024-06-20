@@ -22,11 +22,11 @@ function Detail(){
 
           {/* Nay là hàng chữ nội dung á (record_time đồ)     */}
           <div id="contents">
-            <div class="column1">Record_time</div>
-            <div class="column2">Alcohol_concentration</div>
+            <div class="column1">Time</div>
+            <div class="column2">Alcohol Concentration</div>
             <div class="column3">Temperature</div>
             <div class="column4">Cordinate</div>
-            <div class="column5">Speed/second</div>
+            <div class="column5">Speed</div>
             <div class="column6">Heading</div>
           </div>
 
