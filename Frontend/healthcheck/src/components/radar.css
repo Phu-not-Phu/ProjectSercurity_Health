@@ -1,0 +1,40 @@
+.radar {
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px hsl(0, 0%, 0%), inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+    background: repeating-radial-gradient(transparent, transparent 23px, #287a3300 25px, #287a3300 27px),
+                linear-gradient(#ffffff00, #ffffff00);
+    background-size: 100%, 218px 218px, 218px 218px, 100%;
+    backdrop-filter: blur(3px);
+    position: relative;
+  }
+  
+  .radar-container {
+    max-width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .sweep {
+    box-sizing: border-box;
+    border-right: solid 1.7px hsla(204, 73%, 50%, 0.458);
+    width: 178px;
+    height: 178px;
+    border-radius: 100% 0 0 0;
+    transform-origin: 100% 100%;
+    background: linear-gradient(47deg, rgba(34, 34, 34, 0) 50%, rgb(54, 143, 170));
+    animation: sweep 5s infinite linear;
+  }
+  
+  
+  .ping-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(0, 140, 255);
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+  }
+  
