@@ -24,12 +24,7 @@
   display: flex;
 }
 
-.home-box{
-  /* width: 70%;
-  height: 70%; */
-}
-
-/* .radar {
+.radar {
   overflow: hidden;
   width: 350px;
   height: 350px;
@@ -48,7 +43,7 @@ margin: 0 auto;
 
 .sweep {
 box-sizing: border-box;
-border-right: solid 1.5px hsla(204, 73%, 50%, 0.568);
+border-right: solid 1.5px hsl(189, 100%, 50%);
 width: 178px;
 height: 178px;
 border-radius: 100% 0 0 0;
@@ -101,4 +96,4 @@ animation: sweep 5s infinite linear;
   top: 80%;
   left: 70%;
   --delay: 11;
-} */
+}
