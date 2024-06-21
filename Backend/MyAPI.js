@@ -13,7 +13,7 @@ var con = mysql.createConnection({
     host: "localhost",
     port: "3306",
     user: "root",
-    password: "25122003",
+    password: "Chee180240",
     insecureAuth: true,
     database: "health_user_db"
 });

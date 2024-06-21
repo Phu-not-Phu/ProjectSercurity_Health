@@ -12,6 +12,19 @@
             "name": "health_user_db",
             "database": "health_user_db",
             "username": "Minhhhu"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "security_project",
+            "username": "root",
+            "database": "health_user_db"
         }
     ]
 }
