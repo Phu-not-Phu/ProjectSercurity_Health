@@ -47,20 +47,9 @@ function Login() {
       // console.log(accessToken);
 
       setAuth({ user_email, encrypted_password, accessToken, refreshToken });
+      console.log("Login user in login.js: " + user_email);
       setEmail("");
       setPassword("");
-
-      // window.localStorage.setItem(
-      //   "user",
-      //   JSON.stringify({
-      //     user_email,
-      //     encrypted_password,
-      //     accessToken,
-      //     refreshToken,
-      //   })
-      // );
-      // let user = JSON.parse(localStorage.getItem("user"));
-      // console.log("user: " + JSON.stringify(user));
 
       navigate(from, { replace: true });
     } catch (err) {

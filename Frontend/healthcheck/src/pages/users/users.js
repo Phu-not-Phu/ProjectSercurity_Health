@@ -13,7 +13,7 @@ function Users() {
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
-    // console.log(auth);
+    // console.log("user.js file auth: " + JSON.stringify(auth));
 
     const getUsers = async () => {
       try {
@@ -28,7 +28,7 @@ function Users() {
           setUser(respone.data);
         }
       } catch (error) {
-        console.error(error);
+        console.error("Lỗi: " + error);
         navigate("/login", { state: { from: location }, replace: true });
       }
     };

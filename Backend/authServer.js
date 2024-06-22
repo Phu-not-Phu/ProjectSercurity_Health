@@ -58,27 +58,42 @@ let refreshTokens = [];
 app.get("/users/refresh", (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.jwt) return res.sendStatus(401);
-  // res.json({refreshTokens: cookies.jwt});
 
   const refreshToken = cookies.jwt;
   if (refreshToken == null) return res.sendStatus(401);
   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
 
   var sql = "SELECT * FROM user WHERE refresh_token = ?";
-  
+
   con.query(sql, [refreshToken], async function (err, results) {
     if (err) throw err;
     if (results.length == 0) {
       return res.status(400).send("Cannot find user");
     }
 
-    jwt.verify(refreshToken, process.env.REFRESH_SECRET_TOKEN, (err, user) => {
-      if (err) return res.sendStatus(403);
-      const accessToken = generateAccessToken({
+    try {
+      const user = {
         user_email: results[0].user_email,
-      });
-      res.json({ user_email: results[0].user_email, accessToken: accessToken });
-    });
+        encrypted_password: results[0].encrypted_password,
+      };
+
+      jwt.verify(
+        refreshToken,
+        process.env.REFRESH_SECRET_TOKEN,
+        (err, user) => {
+          if (err) return res.sendStatus(403);
+          const accessToken = generateAccessToken({
+            user_email: results[0].user_email,
+          });
+          res.json({
+            user_email: results[0].user_email,
+            accessToken: accessToken,
+          });
+        }
+      );
+    } catch {
+      res.status(500).send();
+    }
   });
 });
 
