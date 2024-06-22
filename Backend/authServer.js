@@ -55,37 +55,30 @@ con.connect(function (err) {
 //WebAPI
 let refreshTokens = [];
 
-app.get("/users/token", async (req, res) => {
-  // const refreshToken = req.body.refreshToken;
-
-  // if (refreshToken == null) return res.sendStatus(401);
-  // if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
-
-  // jwt.verify(refreshToken, process.env.REFRESH_SECRET_TOKEN, (err, user) => {
-  //   if (err) return res.sendStatus(403);
-
-  //   const accessToken = generateAccessToken({ email: user.email });
-  //   res.json({ email: user.user_email, accessToken: accessToken });
-  // });
+app.get("/users/refresh", (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.jwt) return res.sendStatus(401);
-  console.log(cookies.jwt);
+  // res.json({refreshTokens: cookies.jwt});
+
   const refreshToken = cookies.jwt;
-  res.clearCookie("jwt", { httpOnly: true, sameSite: "None", secure: true });
+  if (refreshToken == null) return res.sendStatus(401);
+  if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
 
   var sql = "SELECT * FROM user WHERE refresh_token = ?";
-  con.query(sql, [refreshToken], function (err, results) {
+  
+  con.query(sql, [refreshToken], async function (err, results) {
     if (err) throw err;
     if (results.length == 0) {
       return res.status(400).send("Cannot find user");
     }
-    let user = {
-      user_email: results[0].user_email,
-      encrypted_password: results[0].encrypted_password,
-    };
 
-    const accessToken = generateAccessToken(user);
-    res.json({user_email: user_email, accessToken: accessToken });
+    jwt.verify(refreshToken, process.env.REFRESH_SECRET_TOKEN, (err, user) => {
+      if (err) return res.sendStatus(403);
+      const accessToken = generateAccessToken({
+        user_email: results[0].user_email,
+      });
+      res.json({ user_email: results[0].user_email, accessToken: accessToken });
+    });
   });
 });
 
@@ -158,6 +151,13 @@ app.post("/users/login", async (req, res) => {
         );
 
         refreshTokens.push(refreshToken);
+
+        res.cookie("jwt", refreshToken, {
+          httpOnly: true,
+          sameSite: "None",
+          secure: true,
+        });
+
         res.json({ accessToken: accessToken, refreshToken: refreshToken });
         res.send("Logged In");
       } else {

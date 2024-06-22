@@ -50,15 +50,15 @@ function Login() {
       setEmail("");
       setPassword("");
 
-      window.localStorage.setItem(
-        "user",
-        JSON.stringify({
-          user_email,
-          encrypted_password,
-          accessToken,
-          refreshToken,
-        })
-      );
+      // window.localStorage.setItem(
+      //   "user",
+      //   JSON.stringify({
+      //     user_email,
+      //     encrypted_password,
+      //     accessToken,
+      //     refreshToken,
+      //   })
+      // );
       // let user = JSON.parse(localStorage.getItem("user"));
       // console.log("user: " + JSON.stringify(user));
 
