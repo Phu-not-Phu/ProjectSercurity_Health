@@ -31,4 +31,6 @@ node
 require('crypto').randomBytes(64).toString('hex')
 
 React HTTPS use:
-HTTPS=true SSL_CRT_FILE=cert.crt SSL_KEY_FILE=cert.key npm start
+npm I https-localhost
+Chỉnh trong package.json mục scripts
+Set HTTPS=true&& set SSL_CRT_FILE=cert.crt&& set SSL_KEY_FILE=cert.key&& react-scripts start

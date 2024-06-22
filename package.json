@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "https-localhost": "^4.7.1",
+    "mkcert": "^3.2.0"
+  }
+}

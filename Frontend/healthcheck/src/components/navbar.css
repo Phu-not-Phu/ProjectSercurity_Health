@@ -1,0 +1,89 @@
+#body{
+    width: auto;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 30% 10%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    box-shadow: rgb(23, 43, 96);
+    border: none;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#right_navbar{
+    display: flex;
+    align-items: center;
+    gap: 9%;
+    color: #e4dded;
+    height: 100%;
+}
+
+#left_navbar{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+#detail_button{
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #e4dded;
+    width: 20%;
+    height: 60%;
+    transition: 400ms;
+}
+
+#detail_button:hover{
+    border: none;
+    border-radius: 20px;
+    background-color: #e4dded;
+    color: rgb(23, 43, 96);
+    width: 20%;
+    height: 60%;
+    transition: 300ms;
+    font-size: 90%;
+}
+
+#logout_button{
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(23, 43, 96);
+    color: #e4dded;
+    height: 60%;
+    width: 70%;
+    transition: 400ms
+}
+
+#logout_button:hover{
+    border: none;
+    border-radius: 20px;
+    background-color: #e4dded;
+    color: rgb(23, 43, 96);
+    height: 60%;
+    width: 70%;
+    transition: 400ms;
+    font-size: 90%;
+}
+
+#home_icon{
+    border: none;
+    border-radius: 20px;
+    height: 60%;
+    width: 15%;
+    transition: 400ms;
+    background: url(./home.svg)  no-repeat center transparent;
+}
+
+
+#home_icon:hover{
+    border: none;
+    border-radius: 20px;
+    height: 60%;
+    width: 15%;
+    transition: 400ms;
+    background: url(./home\ copy.svg)  no-repeat center #e4dded;
+}

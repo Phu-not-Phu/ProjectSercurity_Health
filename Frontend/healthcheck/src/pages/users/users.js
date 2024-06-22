@@ -1,22 +1,26 @@
 import { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import AuthContext from "../../context/authProvider";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Users() {
   const [user, setUser] = useState([]);
   const { auth } = useContext(AuthContext);
+  const axiosPrivate = useAxiosPrivate();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
-    console.log(auth);
+    // console.log("user.js file auth: " + JSON.stringify(auth));
 
     const getUsers = async () => {
       try {
-        console.log(auth.accessToken);
-
-        const respone = await axios.get("http://localhost:8000/users/auths", {
-          headers: auth.accessToken,
+        const respone = await axiosPrivate.get("/users/auths", {
+          headers: {
+            Authorization: `Bearer ${auth.accessToken}`,
+          },
           signal: controller.signal,
         });
 
@@ -24,7 +28,8 @@ function Users() {
           setUser(respone.data);
         }
       } catch (error) {
-        console.error(error);
+        console.error("Lỗi: " + error);
+        navigate("/login", { state: { from: location }, replace: true });
       }
     };
 
@@ -32,7 +37,7 @@ function Users() {
 
     return () => {
       isMounted = false;
-      controller.abort();
+      isMounted && controller.abort();
     };
   }, []);
 

@@ -9,7 +9,7 @@
 #demo-detail {
   background-color: #0000008f;
   position: relative;
-  overflow: auto;
+  overflow:scroll;
   text-align: center;
   font-size: 38px;
   color: #e4dded;
@@ -19,10 +19,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3%;
 }
 
 #contents{
-  width: 95%;
+  width: 90%;
   height: 20%;
   padding: 2%;
   display: grid;
@@ -33,7 +34,7 @@
 }
 
 hr{
-  width: 95%;
+  width: 90%;
   margin: 0;
 }
 
@@ -41,7 +42,7 @@ hr{
 
 
 #details{
-  width: 95%;
+  width: 90%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -63,138 +64,3 @@ p{
   width: auto;
   height: auto;
 }
-
-/* .map {
-position: absolute;
-top: -28px;
-left: -240px;
-width: 1920px;
-height: 1080px;
-object-fit: cover;
-}
-.blur_layer {
-position: absolute;
-top: 0px;
-left: 0px;
-background-color: rgba(8, 2, 4, 0.8);
-width: 100%;
-height: 1028px;
-}
-.demo-detail-item {
-position: absolute;
-top: 269px;
-left: calc(50% - 708px);
-border-bottom: 1px solid rgba(228, 221, 237, 0.5);
-box-sizing: border-box;
-width: 1417px;
-height: 91px;
-}
-.demo-detail-inner {
-position: absolute;
-top: 376px;
-left: 11px;
-border-bottom: 1px solid rgba(228, 221, 237, 0.5);
-box-sizing: border-box;
-width: 1417px;
-height: 81px;
-}
-.rectangle-div {
-position: absolute;
-top: 474px;
-left: 11px;
-border-bottom: 1px solid rgba(228, 221, 237, 0.5);
-box-sizing: border-box;
-width: 1417px;
-height: 81px;
-}
-.demo-detail-child1 {
-position: absolute;
-top: 593px;
-left: 11px;
-border-bottom: 1px solid rgba(228, 221, 237, 0.5);
-box-sizing: border-box;
-width: 1417px;
-height: 81px;
-}
-.demo-detail-child2 {
-position: absolute;
-top: 712px;
-left: 11px;
-border-bottom: 1px solid rgba(228, 221, 237, 0.5);
-box-sizing: border-box;
-width: 1417px;
-height: 81px;
-}
-.demo-detail-child3 {
-position: absolute;
-top: 831px;
-left: 11px;
-border-bottom: 1px solid rgba(228, 221, 237, 0.5);
-box-sizing: border-box;
-width: 1417px;
-height: 81px;
-}
-.hr {
-position: absolute;
-top: 237px;
-left: calc(50% - 708px);
-background-color: #d9d9d9;
-width: 1417px;
-height: 1px;
-}
-.search {
-position: absolute;
-}
-.record-time {
-width: 216px;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-height: 53px;
-flex-shrink: 0;
-text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
-}
-.alcohol-concentration {
-width: 258px;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-height: 53px;
-flex-shrink: 0;
-text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
-}
-.contents {
-position: absolute;
-top: 185px;
-left: 0px;
-width: 1440px;
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-justify-content: flex-start;
-gap: 18px;
-}
-.demo-detail {
-width: 100%;
-position: relative;
-background-color: #fff;
-height: 1024px;
-overflow: hidden;
-text-align: center;
-font-size: 22px;
-color: #e4dded;
-font-family: Inter;
-}
-
-.search-box{
-margin-top: 5%;
-float: right;
-width: 30%;
-height: 5%;
-border: 1px solid #e4dded;
-border-color: #e4dded;
-border-radius: 30%;
-display: flex;
-} */

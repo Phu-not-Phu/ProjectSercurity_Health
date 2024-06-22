@@ -1,12 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RequireAuth from "./components/requireAuth";
+import PersistLogin from "./components/persistLogin";
 
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import Home from "./pages/home/home";
 import Users from "./pages/users/users";
-import Detail from "./pages/Detail/detail"
+import Detail from "./pages/Detail/detail";
 
 function App() {
   return (
@@ -18,12 +19,16 @@ function App() {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/login" element={<Login />} />
-            <Route exact path="/detail" element={<Detail />} />
+            {/* <Route exact path="/detail" element={<Detail />} /> */}
 
             {/*Protected routes*/}
-            <Route element={<RequireAuth />}>
-              <Route exact path="/users" element={<Users />} />
+            <Route element={<PersistLogin />}>
+              <Route element={<RequireAuth />}>
+                <Route exact path="/users" element={<Users />} />
+                <Route exact path="/detail" element={<Detail />} />
+              </Route>
             </Route>
+            {/***/}
           </Routes>
         </div>
       </Router>

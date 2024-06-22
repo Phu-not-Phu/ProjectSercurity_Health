@@ -10,7 +10,8 @@ CREATE TABLE user(
     age float,
     weight_kg float,
     height_meter float,
-    is_user_dead boolean
+    is_user_dead boolean,
+    refresh_token VARCHAR(255)
 );
 
 CREATE TABLE record(
@@ -28,10 +29,10 @@ CREATE TABLE record(
 
 -- insert zone --
 -- user --
-INSERT INTO user VALUES (userID, 'Minhhu@fakemail.ching', null, 'Minh', 21, 100, 1.71, 0);
-INSERT INTO user VALUES (userID, 'Phong@chingchongmail.chong', null, 'Phong', 21, 20, 1.35, 1);
-INSERT INTO user VALUES (userID, 'Phu@parkynui.com', null, 'Phu', 21, 70, 1.88, 0);
-INSERT INTO user VALUES (userID, 'QUan@cavemail.com', null, 'Quan', 21000, 80, 1.62, 0);
+INSERT INTO user VALUES (userID, 'Minhhu@fakemail.ching', null, 'Minh', 21, 100, 1.71, 0, null);
+INSERT INTO user VALUES (userID, 'Phong@chingchongmail.chong', null, 'Phong', 21, 20, 1.35, 1, null);
+INSERT INTO user VALUES (userID, 'Phu@parkynui.com', null, 'Phu', 21, 70, 1.88, 0, null);
+INSERT INTO user VALUES (userID, 'QUan@cavemail.com', null, 'Quan', 21000, 80, 1.62, 0, null);
 
 -- fake date --
 INSERT INTO record VALUES (id, 0.13, 73.75, '-42.589576,100.45292', 68, 292, '2024-06-14 17:40:25', 1);
@@ -59,7 +60,7 @@ INSERT INTO record VALUES (id, 0.03, 29.8, '-57.50958,-131.085724', 40, 27, '202
 
 
 -- select zone --
-SELECT * FROM user;
+SELECT * FROM user WHERE user_email = "phu@danghomp.com";
 SELECT * FROM record;
 
 

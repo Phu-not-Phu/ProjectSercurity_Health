@@ -1,16 +1,16 @@
 import "./detail.css";
+// import Navbar from "../../components/navbar"
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import InfiniteScroll from 'react-infinite-scroller';
 
-function Detail(){
+function Detail() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get("http://192.168.56.1:8081/all")
-      .then((response) => {
-        setItems(response.data);
-      });
+    axios.get("http://localhost:8081/all").then((response) => {
+      setItems(response.data);
+    });
   }, []);
 
   // Dùng hàm này để chuyển đổi số thập phân sang độ, phút, giây
@@ -50,7 +50,8 @@ function Detail(){
   
   return (
     <div id="container">
-        <div id="demo-detail">
+      <div id="demo-detail">
+        {/* <Navbar/> */}
 
           {/* Nay là hàng chữ nội dung á (record_time đồ)     */}
           <div id="contents">
@@ -79,7 +80,7 @@ function Detail(){
             ))}
           </div>
         </div>
-    </div>
+      </div>
   );
 }
 

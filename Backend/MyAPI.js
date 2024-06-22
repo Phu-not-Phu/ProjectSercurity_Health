@@ -20,11 +20,11 @@ var con = mysql.createConnection({
 con.connect(function (err) {
     if (err) throw err;
     console.log("Connected!!!")
-    var sql = "select * from record;";
-    con.query(sql, function (err, results) {
-        if (err) throw err;
-        console.log(results);
-    })
+    // var sql = "select * from record;";
+    // con.query(sql, function (err, results) {
+    //     if (err) throw err;
+    //     console.log(results);
+    // })
 });
 //viết api
 app.get("/all", function (req, res) {
