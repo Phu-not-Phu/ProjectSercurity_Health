@@ -24,6 +24,16 @@
   display: flex;
 }
 
+h1 {
+  font-size: 65px;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
 .radar {
   overflow: hidden;
   width: 350px;
@@ -34,6 +44,7 @@
               linear-gradient(#ffffff00, #ffffff00);
   background-size: 100%, 218px 218px, 218px 218px, 100%;
   backdrop-filter: blur(3px);
+  border: solid 1px hsl(0, 0%, 0%);
 }
 
 .radar-container{
@@ -62,38 +73,37 @@ animation: sweep 5s infinite linear;
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: rgb(0, 140, 255);
-  cursor: pointer;
-  transition: 300ms ease-in-out;
+  background-color: rgba(192, 86, 0, 0);
+  transition: 1ms ease-in-out;
   animation: ping-dot 5s infinite linear;
   animation-delay: calc(var(--delay) * 100ms);
 }
 
 @keyframes ping-dot {
   from {
-    box-shadow: 0 0 4px 4px rgba(0, 204, 255, 0.589);
-  }
-  to {
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0), 0 0 0 4px rgba(0, 255, 0, 0),
-                0 0 0 6px rgba(0, 0, 0, 0), 0 0 0 8px rgba(0, 255, 0, 0),
-                0 0 4px 10px rgba(0, 255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.815);
+    box-shadow: 0 0 4px 4px rgb(138, 28, 0);
   }
 }
 
-#dot1 {
-  top: 40%;
-  left: 30%;
-  --delay: 7;
+.gotologin-button{
+  margin-top: 20px;
+  width: 350px;
+  height: 55px;
+  font-size: 20px;
+  color: #080204;
+  background-color: #e4dded;
+  border-radius: 20px;
+  border: none;
+  transition: 400ms;
+  cursor: pointer;
 }
 
-#dot2 {
-  top: 60%;
-  left: 50%;
-  --delay: 9;
-}
-
-#dot3 {
-  top: 80%;
-  left: 70%;
-  --delay: 11;
+.gotologin-button:hover{
+  transition: 400ms;
+  color: #e4dded;
+  background-color: #0031b7; /* Màu nền khi hover */
+  transform: scale(1.03); /*Phóng to nhẹ khi hover*/
+  border: none;
+  /* font-size: 20.5px; */
 }
