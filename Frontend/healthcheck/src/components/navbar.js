@@ -14,7 +14,8 @@ const Navbar = ({onShowOverlay}) => {
         <div id="body">
             <div id="right_navbar">
                 <button id="home_icon" onClick={handleHome}></button>
-                <button id="detai_button" onClick={onShowOverlay}></button>
+                <button id="detail_button" onClick={onShowOverlay}></button>
+                <button id="users_button"></button>
             </div>
             
             <div id="left_navbar">
