@@ -1,36 +1,116 @@
 #container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: url(../icon/mapBackground.png) no-repeat center center fixed; 
   background-size: cover;
 }
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(0, 255, 255);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
 
+.dot.active {
+  /* Add any styles for active state here */
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 3px 15px;
+  z-index: 400;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: auto;
+  backdrop-filter: blur(10px);
+}
+
+.dropdown-content.active {
+  display: block;
+  pointer-events: auto;
+}
+
+.dropdown-content.active:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.overlay {
+  background-color: #000000d0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay-content {
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.close-button {
+  background: rgb(146, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  margin-right: 20px;
+  padding: 10px;
+  transition: 400ms;
+  width: 50px;
+  height: 50px;
+}
+.close-button:hover {
+  background: rgb(255, 0, 0);
+  scale: 1.1;
+  transition: 400ms;
+}
 
 #demo-detail {
-  background-color: #0000008f;
   position: relative;
-  overflow:scroll;
+  overflow: auto;
   text-align: center;
-  font-size: 38px;
-  color: #e4dded;
+  font-size: 30px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3%;
 }
 
 #contents{
   width: 90%;
-  height: 20%;
-  padding: 2%;
+  height: auto;
+  margin: 10px;
   display: grid;
-  grid-template-columns: 20% 20% 10% 25% 10% 10%;
+  grid-template-columns: 5% 20% 10% 10% 25% 10% 10%;
   align-items: center;
   gap: 1%;
-  font-size: 55%;
+  font-size: 50%;
+  color: #ffffff;
 }
 
 hr{
@@ -53,14 +133,15 @@ hr{
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: 20% 20% 10% 25% 10% 10%;
+  grid-template-columns: 5% 20% 10% 10% 25% 10% 10%;
   align-items: center;
   gap: 1%;
-  font-size: 50%;
   border-bottom: 1px solid #e4dded52;
+  color: #ececec;
 }
 
 p{
   width: auto;
   height: auto;
+  font-size: 60%;
 }
