@@ -1,5 +1,4 @@
 import "./register.css";
-import mapBackground from "../icon/mapBackground.png";
 import mail from "../icon/envelope-closed 1.svg";
 import lock from "../icon/lock 1.svg";
 import name from "../icon/nameBadge.svg";

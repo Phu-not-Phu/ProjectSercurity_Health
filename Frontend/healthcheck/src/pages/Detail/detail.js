@@ -1,8 +1,8 @@
 import "./detail.css";
 import Navbar from "../../components/navbar"
+import SearchBar from "../../components/searchBar/searchBar";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import InfiniteScroll from 'react-infinite-scroller';
 
 function Detail() {
   const [items, setItems] = useState([]);
@@ -128,6 +128,11 @@ function Detail() {
           <button className="close-button" onClick={hideOverlay}>X</button>
           <div className="overlay-content">
             <div id="demo-detail">
+
+              <div id="searchBar">
+                <SearchBar/>
+              </div>
+
               <div id="contents">
                 <div className="column0">ID</div>
                 <div className="column1">Time</div>

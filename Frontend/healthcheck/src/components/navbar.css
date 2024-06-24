@@ -15,7 +15,7 @@
 #right_navbar{
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 8%;
     color: #e4dded;
     height: 100%;
 }
@@ -27,30 +27,48 @@
     height: 100%;
 }
 
-#detai_button{
+#detail_button{
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 15%;
+    width: 14%;
     transition: 400ms;
     background: url(./menu-hambuger-white.svg)  no-repeat center transparent;
     z-index: 990;
 }
 
-#detai_button:hover{
+#detail_button:hover{
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 80%;
+    width: 16%;
     transition: 400ms;
     background: url(./menu-hambuger.svg)  no-repeat center #e4dded;
+}
+
+#users_button{
+    border: none;
+    border-radius: 20px;
+    height: 100%;
+    width: 14%;
+    transition: 400ms;
+    background: url(./group.svg)  no-repeat center transparent;
+}
+
+#users_button:hover{
+    border: none;
+    border-radius: 20px;
+    height: 100%;
+    width: 15%;
+    transition: 400ms;
+    background: url(./group\ copy.svg)  no-repeat center #e4dded;
 }
 
 #logout_button{
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 35%;
+    width: 17%;
     transition: 400ms;
     background: url(./logout-white.svg)  no-repeat center transparent;
 }
@@ -59,7 +77,7 @@
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 100%;
+    width: 21%;
     transition: 400ms;
     background: url(./logout.svg)  no-repeat center #e4dded;
 }
@@ -68,7 +86,7 @@
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 15%;
+    width: 11%;
     transition: 400ms;
     background: url(./home.svg)  no-repeat center transparent;
     z-index: 990;
@@ -80,7 +98,7 @@
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 80%;
+    width: 12%;
     transition: 400ms;
     background: url(./home\ copy.svg)  no-repeat center #e4dded;
 }
