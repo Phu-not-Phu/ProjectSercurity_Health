@@ -34,6 +34,7 @@
     width: 14%;
     transition: 400ms;
     background: url(./menu-hambuger-white.svg)  no-repeat center transparent;
+    background-color: black;
     z-index: 990;
 }
 
@@ -41,7 +42,7 @@
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 16%;
+    width: 90%;
     transition: 400ms;
     background: url(./menu-hambuger.svg)  no-repeat center #e4dded;
 }
@@ -53,13 +54,15 @@
     width: 14%;
     transition: 400ms;
     background: url(./group.svg)  no-repeat center transparent;
+    background-color: black;
+    z-index: 990;
 }
 
 #users_button:hover{
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 15%;
+    width: 90%;
     transition: 400ms;
     background: url(./group\ copy.svg)  no-repeat center #e4dded;
 }
@@ -71,13 +74,15 @@
     width: 17%;
     transition: 400ms;
     background: url(./logout-white.svg)  no-repeat center transparent;
+    background-color: black;
+    z-index: 990;
 }
 
 #logout_button:hover{
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 21%;
+    width: 90%;
     transition: 400ms;
     background: url(./logout.svg)  no-repeat center #e4dded;
 }
@@ -89,6 +94,7 @@
     width: 11%;
     transition: 400ms;
     background: url(./home.svg)  no-repeat center transparent;
+    background-color: black;
     z-index: 990;
 
 }
@@ -98,7 +104,7 @@
     border: none;
     border-radius: 20px;
     height: 100%;
-    width: 12%;
+    width: 90%;
     transition: 400ms;
     background: url(./home\ copy.svg)  no-repeat center #e4dded;
 }

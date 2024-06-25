@@ -1,12 +1,13 @@
 #search_body{
     width: 20%;
     height: 100%;
-    border: 2px solid #e4e4e480;
-    border-radius: 20px;
+    border: 2px solid #e4e4e4d7;
+    border-radius: 8px;
     display: grid;
     grid-template-columns: 75% 20%;
     justify-content: space-between;
     padding-left: 2%;
+    backdrop-filter: blur(10px);
 }
 
 #search_body:focus-within{

@@ -6,7 +6,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleGOClick = () => {
-    navigate("../users");
+    navigate("../detail");
   };
 
   return (

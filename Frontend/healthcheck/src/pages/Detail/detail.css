@@ -9,41 +9,51 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgb(0, 255, 255);
+  background-color: rgb(0, 255, 157);
   transform: translate(-50%, -50%);
   z-index: 1;
+  animation: echo 4s infinite linear;
+  transition: 500ms;
+}
+@keyframes echo {
+  to {
+    background: radial-gradient(circle, rgb(0, 225, 255) 36%, rgba(0, 0, 0, 0) 61%);
+  }
 }
 
-.dot.active {
-  /* Add any styles for active state here */
+.dot:hover {
+  background-color: red!important;
+  background: radial-gradient(circle, rgb(255, 0, 0) 36%, rgba(0, 0, 0, 0) 61%)!important;
+  /* animation-play-state:paused!important; */
 }
-
-
 
 .dropdown-content {
   display: none;
   position: absolute;
   color: #ffffff;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 3px 15px;
   z-index: 400;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 160px;
   height: auto;
   backdrop-filter: blur(10px);
+  transition: 300ms;
 }
 
 .dropdown-content.active {
   display: block;
   pointer-events: auto;
+  transition: 300ms;
 }
 
 .dropdown-content.active:hover {
-  background-color: #ffffff;
+  background-color: #fffffffd;
   color: #000000;
+  transition: 300ms;
 }
 
 .overlay {
@@ -90,7 +100,7 @@
 
 #demo-detail {
   position: relative;
-  overflow: auto;
+  /* overflow: auto; */
   text-align: center;
   font-size: 30px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
