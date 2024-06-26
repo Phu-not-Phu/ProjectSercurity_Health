@@ -92,19 +92,7 @@ function Detail() {
       <div className="map">
         {coordinatesArray.map((coordinates, index) => {
             const x = (coordinates[1] + 180) * (100 / 360);
-            const y = (90 - coordinates[0]) * (100 / 180);
-
-            // const dotStyle = {
-            //   position: 'absolute',
-            //   width: '10px',
-            //   height: '10px',
-            //   borderRadius: '50%',
-            //   backgroundColor: 'red',
-            //   left: `${x}%`,
-            //   top: `${y}%`,
-            //   transform: 'translate(-50%, -50%)',
-            //   zIndex: index + 1
-            // };
+            const y = (100 - coordinates[0]) * (100 / 180);
 
             return (
               <div className="dot" key={index} style={{ left: `${x}%`, top: `${y}%` }}
