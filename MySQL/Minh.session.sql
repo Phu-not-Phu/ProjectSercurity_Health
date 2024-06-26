@@ -11,7 +11,7 @@ CREATE TABLE user(
     weight_kg float,
     height_meter float,
     is_user_dead boolean,
-    refresh_token VARCHAR(255)
+    refresh_token VARCHAR(500)
 );
 
 CREATE TABLE record(
