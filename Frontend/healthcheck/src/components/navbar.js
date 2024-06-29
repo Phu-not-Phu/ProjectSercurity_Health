@@ -9,13 +9,14 @@ const Navbar = ({onShowOverlay}) => {
 
     const handleLogout = () => {logout()};
     const handleHome = () => {navigate("../home")};
+    const handleUser = () => {navigate("../users")};
 
     return(
         <div id="body">
             <div id="right_navbar">
                 <button id="home_icon" onClick={handleHome}></button>
                 <button id="detail_button" onClick={onShowOverlay}></button>
-                <button id="users_button"></button>
+                <button id="users_button" onClick={handleUser}></button>
             </div>
             
             <div id="left_navbar">
