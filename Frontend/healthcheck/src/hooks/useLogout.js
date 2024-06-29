@@ -2,15 +2,16 @@ import axios from "../api/axios";
 import useAuth from "./useAuth";
 
 const useLogout = () => {
-  const { setAuth } = useAuth();
+  const { setAuth } = useAuth([]);
 
   const logout = async () => {
     setAuth({});
-    try {const response = await axios.post("/users/logout", {withCredentials: false,})
-    
-      console.log(response);
-    } catch (error) {
-      console.error(error);
+    try {
+      await axios("/users/logout", {
+        withCredentials: true,
+      });
+    } catch (err) {
+      console.log(err);
     }
   };
 

@@ -70,6 +70,7 @@ app.get("/users/refresh", (req, res) => {
     if (results.length == 0) {
       return res.status(400).send("Cannot find user");
     }
+    res.send(results);
 
     try {
       const user = {
@@ -91,6 +92,54 @@ app.get("/users/refresh", (req, res) => {
           });
         }
       );
+    } catch {
+      res.status(500).send();
+    }
+  });
+});
+
+app.delete("/users/logout", (req, res) => {
+  const cookies = req.cookies;
+  if (!cookies?.jwt) return res.sendStatus(401);
+
+  const refreshToken = cookies.jwt;
+  if (refreshToken == null) return res.sendStatus(401);
+  if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403);
+
+  var sql = "SELECT * FROM user WHERE refresh_token = ?";
+
+  con.query(sql, [refreshToken], function (err, results) {
+    if (err) throw err;
+    if (results.affectedRows == 0) {
+      return res.status(400).send("Cannot find user");
+    }
+
+    try {
+      const user = {
+        user_email: results[0].user_email,
+        encrypted_password: results[0].encrypted_password,
+      };
+
+      var sqlUpdate = "UPDATE user SET refresh_token = ? WHERE user_email = ?";
+
+      con.query(sqlUpdate, ["", user.user_email], function (err, results) {
+        if (err) throw err;
+        if (results.affectedRows == 0) {
+          res.clearCookie("jwt", {
+            httpOnly: true,
+            sameSite: "None",
+            secure: true,
+          });
+          return res.status(400).send("Cannot find user");
+        }
+      });
+
+      res.clearCookie("jwt", {
+        httpOnly: true,
+        sameSite: "None",
+        secure: true,
+      });
+      res.send("Logged Out");
     } catch {
       res.status(500).send();
     }
@@ -182,11 +231,6 @@ app.post("/users/login", async (req, res) => {
       res.status(500).send();
     }
   });
-});
-
-app.delete("/users/logout", (req, res) => {
-  refreshTokens = refreshTokens.filter((token) => token !== req.body.token);
-  res.sendStatus(204);
 });
 
 function authenticateToken(req, res, next) {
